@@ -9,13 +9,11 @@ def home(request):
 
 def password(request):
     password = ''
-
+    length = int(request.GET.get('length'))
     characters = list('qwertyuiopasdfghjklzxcvbnm')
-
+    
     if request.GET.get('uppercase'):
         characters.extend(list('QWERTYUIOPASDFGHJKLZXCVBNM'))
-
-    length = int(request.GET.get('length'))
     for _ in range(length):
         password += random.choice(characters)
 

@@ -2,7 +2,6 @@
 
 from django.test import TestCase
 from generator.models import make_password
-from random import choice
 
 
 class PasswordLengthTestCase(TestCase):

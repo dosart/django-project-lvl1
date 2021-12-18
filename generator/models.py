@@ -1,4 +1,5 @@
-import random
+import secrets
+import string
 
 
 def make_password(length, uppercase=False, special=False, numbers=False):
@@ -16,26 +17,12 @@ def make_password(length, uppercase=False, special=False, numbers=False):
         return ""
     if length > 100:
         length = 100
-    symbols = list("qwertyuiopasdfghjklzxcvbnm")
+
+    symbols = list(string.ascii_lowercase)
     if uppercase is True:
-        symbols.extend([symbol.upper() for symbol in symbols])
+        symbols.extend(list(string.ascii_uppercase))
     if special is True:
-        symbols.extend(list("!@#$%^&*()_+="))
+        symbols.extend(list("!@#$%^&*()_+-"))
     if numbers is True:
-        symbols.extend(list("123456789"))
-    return _make(symbols, length)
-
-
-def _make(symbols, length):
-    """Return new password.
-
-    Args:
-        symbols(list): symbols for new password
-        length(int): length new password
-    Returns:
-        password(str): new password
-    """
-    password = ""
-    for _ in range(length):
-        password += random.choice(symbols)
-    return password
+        symbols.extend(list(string.digits))
+    return "".join(secrets.choice(symbols) for _ in range(length))

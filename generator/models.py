@@ -23,20 +23,19 @@ def make_password(length, uppercase=False, special=False, numbers=False):
         symbols.extend(list("!@#$%^&*()_+="))
     if numbers is True:
         symbols.extend(list("123456789"))
-    return _make(symbols, length, random.choice)
+    return _make(symbols, length)
 
 
-def _make(symbols, length, custom_random):
+def _make(symbols, length):
     """Return new password.
 
     Args:
         symbols(list): symbols for new password
         length(int): length new password
-        custom_random(function): function for choice symbol in symbols
     Returns:
         password(str): new password
     """
     password = ""
     for _ in range(length):
-        password += custom_random(symbols)
+        password += random.choice(symbols)
     return password

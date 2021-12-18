@@ -1,41 +1,24 @@
 """Tests for project."""
 
 from django.test import TestCase
-from generator.models import make
+from generator.models import make_password
 from random import choice
 
 
 class PasswordLengthTestCase(TestCase):
     def test_length_is_zero(self):
-        symbols = ["A", "B"]
-        length = 0
-        self.assertEqual(make(symbols, length, choice), "")
+        self.assertEqual(make_password(length=0, special=True, numbers=True), "")
 
     def test_length_is_negative_number(self):
-        symbols = ["A", "B"]
-        length = -1
-        self.assertEqual(make(symbols, length, choice), "")
+        self.assertEqual(make_password(length=-1, special=True, numbers=True), "")
 
     def test_length_is_more_than_thousand(self):
-        symbols = ["A", "B"]
-        length = 1000
-        password = make(symbols, length, choice)
+        password = make_password(length=1000, special=True, numbers=True)
         self.assertEqual(len(password), 100)
 
-        length = 10000
-        password = make(symbols, length, choice)
+        password = make_password(length=100, special=True, numbers=True)
         self.assertEqual(len(password), 100)
 
-
-class PasswordSymbolsTestCase(TestCase):
-    def test_symbols_for_password_is_empty(self):
-        symbols = []
-        length = 10
-
-        self.assertEqual(make(symbols, length, choice), "")
-
-    def test_symbols_and_length_is_empty(self):
-        symbols = []
-        length = 0
-
-        self.assertEqual(make(symbols, length, choice), "")
+    def test_length_equals_ten(self):
+        password = make_password(length=10, special=True, numbers=True)
+        self.assertEqual(len(password), 10)

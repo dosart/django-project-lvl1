@@ -1,6 +1,9 @@
 install:
 	@poetry install
 
+test:
+	poetry run python3 manage.py test
+
 run_server:
 	poetry run python3 manage.py runserver
 
@@ -11,7 +14,7 @@ format:
 	poetry run black generator/
 
 lint:
-	poetry run flake8 generator/views.py
+	poetry run flake8 generator/models.py
 
 selfcheck:
 	poetry check

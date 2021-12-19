@@ -14,7 +14,7 @@ format:
 	poetry run black generator/
 
 lint:
-	poetry run flake8 generator/models.py
+	poetry run flake8 generator/views.py generator/models.py
 
 selfcheck:
 	poetry check

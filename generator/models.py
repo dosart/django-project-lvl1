@@ -10,10 +10,11 @@ def make_password(length, uppercase=False, special=False, numbers=False):
     """Return new password.
 
     Args:
-        length(int): length of the new password
-        uppercase(bool): flag of uppercase characters in the new password
-        special(bool): flag of special characters in the new password
-        numbers(bool): flag of numbers characters in the new password
+         length(int): length of the new password
+         uppercase(bool): flag of uppercase characters in the new password
+         special(bool): flag of special characters in the new password
+         numbers(bool): flag of numbers characters in the new password
+
     Returns:
         password(str): new password
     """

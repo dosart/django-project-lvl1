@@ -7,10 +7,11 @@ from generator.models import make_password
 
 
 def home(request):
-    """Controller for home page.
+    """Return home page.
 
     Args:
         request: HTTP request
+
     Returns:
         render: HTML page
     """
@@ -18,10 +19,11 @@ def home(request):
 
 
 def password(request):
-    """Controller for password page.
+    """Return password page.
 
     Args:
         request: HTTP request
+
     Returns:
         render: HTML page
     """
@@ -44,10 +46,11 @@ def password(request):
 
 
 def about(request):
-    """Controller for about page.
+    """Return for about page.
 
     Args:
         request: HTTP request
+
     Returns:
         render: HTML page
     """

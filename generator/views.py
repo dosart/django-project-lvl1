@@ -44,4 +44,11 @@ def password(request):
 
 
 def about(request):
+    """Controller for about page.
+
+    Args:
+        request: HTTP request
+    Returns:
+        render: HTML page
+    """
     return render(request, "generator/about.html")

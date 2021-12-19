@@ -1,3 +1,7 @@
+# -*- coding:utf-8 -*-
+
+"""Implementation of algorithm generate password."""
+
 import secrets
 import string
 

@@ -1,4 +1,16 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!DOCTYPE html>
+<html lang="ru" >
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
 
 <div class="container text-center">
   <h1>Password Generator</h1>
@@ -15,15 +27,51 @@
       <option value="13">13</option>
       <option value="14">14</option>
     </select> Length
-    <br>
-    <input type="checkbox" name="uppercase"> Uppercase
-    <br>
-    <input type="checkbox" name="numbers"> Numbers
-    <br>
-    <input type="checkbox" name="special"> Special Characters
-    <br>
-
+   
+    <div class="check-group" style="position: relative; left: 40%;">
+      <!-- создаём подпись и указываем, к какому элементу она относится -->
+      <label for="myCheckbox01" class="checkbox">
+    
+        <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
+        <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
+        <input class="checkbox__input" type="checkbox" id="myCheckbox01">
+        
+        <!-- готовим виртуальное пространство для рисования -->
+        <svg class="checkbox__icon" viewBox="0 0 22 22">
+          <!-- рисуем красивую рамку чекбокса -->
+          <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+          <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
+          <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+        </svg>
+    
+        <!-- подписываем наш чекбокс -->
+        <span class="checkbox__label"name="uppercase">Uppercase</span>
+      </label>
+    
+      <label for="myCheckbox02" class="checkbox">
+        <input class="checkbox__input" type="checkbox" id="myCheckbox02">
+        <svg class="checkbox__icon" viewBox="0 0 22 22">
+          <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+          <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+        </svg>
+        <span class="checkbox__label" name="numbers">Numbers</span>
+      </label>
+    
+       <label for="myCheckbox03" class="checkbox">
+        <input class="checkbox__input" type="checkbox" id="myCheckbox03">
+        <svg class="checkbox__icon" viewBox="0 0 22 22">
+          <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
+          <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
+        </svg>
+        <span class="checkbox__label" name="special">Special Characters</span>
+      </label>
+      
+    </div>
+  
     <input type="submit" value="Generate Password" class="btn btn-primary">
     <a href="{% url 'about' %}" class="btn btn-info">About</a>
   </form>
 </div>
+
+</body>
+</html>

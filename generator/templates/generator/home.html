@@ -29,27 +29,18 @@
     </select> Length
    
     <div class="check-group" style="position: relative; left: 40%;">
-      <!-- создаём подпись и указываем, к какому элементу она относится -->
+
       <label for="myCheckbox01" class="checkbox">
-    
-        <!-- размещаем обычный чекбокс и задаём ему нужный класс -->
-        <!-- также указываем id, чтобы подпись смогла найти этот инбокс -->
-        <input class="checkbox__input" type="checkbox" id="myCheckbox01">
-        
-        <!-- готовим виртуальное пространство для рисования -->
+        <input class="checkbox__input" type="checkbox" id="myCheckbox01" name="uppercase">
         <svg class="checkbox__icon" viewBox="0 0 22 22">
-          <!-- рисуем красивую рамку чекбокса -->
           <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
-          <!-- сразу делаем красивую галочку, но пока делаем её невидимой -->
           <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
         </svg>
-    
-        <!-- подписываем наш чекбокс -->
         <span class="checkbox__label"name="uppercase">Uppercase</span>
       </label>
     
       <label for="myCheckbox02" class="checkbox">
-        <input class="checkbox__input" type="checkbox" id="myCheckbox02">
+        <input class="checkbox__input" type="checkbox" id="myCheckbox02" name="numbers">
         <svg class="checkbox__icon" viewBox="0 0 22 22">
           <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
           <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
@@ -58,7 +49,7 @@
       </label>
     
        <label for="myCheckbox03" class="checkbox">
-        <input class="checkbox__input" type="checkbox" id="myCheckbox03">
+        <input class="checkbox__input" type="checkbox" id="myCheckbox03" name="special">
         <svg class="checkbox__icon" viewBox="0 0 22 22">
           <rect width="21" height="21" x=".5" y=".5" fill="#FFF" stroke="#006F94" rx="3" />
           <path class="tick" stroke="#6EA340" fill="none" stroke-linecap="round" stroke-width="4" d="M4 10l5 5 9-9" />
